@@ -41,9 +41,12 @@ on an existing folder, select 'Add folder' -> 'DBFS'.  You should now be able to
 an FTP client and navigate into the DBFS folder.  Any directories that you create from the client
 will be created inside the database, as well as the physical directory.
 
-## Troubleshooting
+## Tips and Troubleshooting
 
 * Use Windows Explorer to see the physical directories being created (via the FTP client).
 * Use [Compact View](http://www.softpedia.com/get/Internet/Servers/Database-Utils/CompactView.shtml) to inspect the contents of the SQL Server Compact database.
 * Place logging messages in the JSS code using ``console.log("My log message");``
 * Open the real-time logging window inside CompleteFTP Manager to see log messages.
+* You can edit the JSS code in your favourite editor or from within CompleteFTP.
+* CompleteFTP will pick up any changes that you make in real-time.  Unlike .NET extensions,
+  there's no need to restart CompleteFTP each time a change is made.
