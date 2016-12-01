@@ -4,8 +4,10 @@
 
 This is a file-system adapter extension that implements a file-system whose structure is stored
 in a database, but whose files are stored in the regular file-system.  It's written in JSS
-(Javascript Server-Side).  This implementation uses SQL Server Compact, but it's relatively easy
-to convert to another database.  E-mail support@enterprisedt.com if in doubt.
+(Javascript Server-Side).  This implementation uses SQL Server Compact because it requires
+no independent management (the database is created automatically upon first access). 
+It should be relatively easy to convert to another SQL database.  
+E-mail questions to support@enterprisedt.com.
 
 ## Limitations
 
@@ -34,15 +36,18 @@ CompleteFTP Enterprise Edition version 9.0 or later.
 12. Name the newly created folder, 'DBFS'.
 13. Click 'Apply changes'.
 
-## Testing the installation
+## Testing
 
-The next step is to create a DBFS folder in the virtual file-system.  To do this, right-click
-on an existing folder, select 'Add folder' -> 'DBFS'.  You should now be able to log in via
+To test, create a DBFS folder in CompleteFTP's virtual file-system.  To do this, right-click
+on an existing folder (e.g. a test user's home folder), select 'Add folder' -> 'DBFS'.  
+You should now be able to log in via
 an FTP client and navigate into the DBFS folder.  Any directories that you create from the client
 will be created inside the database, as well as the physical directory.
 
 ## Tips and Troubleshooting
 
+* Documentation on developing JSS file-system extensions is [here](http://enterprisedt.com/products/completeftp/doc/guide/html/jssfilesystemextensions.html).
+* JSS API documentation can be found [here](http://enterprisedt.com/products/completeftp/doc/guide/jssapi/modules/API.html).
 * Use Windows Explorer to see the physical directories being created (via the FTP client).
 * Use [Compact View](http://www.softpedia.com/get/Internet/Servers/Database-Utils/CompactView.shtml) to inspect the contents of the SQL Server Compact database.
 * Place logging messages in the JSS code using ``console.log("My log message");``
